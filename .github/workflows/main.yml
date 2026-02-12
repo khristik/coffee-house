@@ -39,7 +39,7 @@ jobs:
         run: npx prettier --check .
 
       - name: Lint Check
-        run: npm run lint -- --dir .
+        run: npx next lint .
 
       - name: TypeScript Check
         run: npx tsc --noEmit
