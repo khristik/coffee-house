@@ -11,26 +11,20 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   {
-    // Додай цей блок на початок масиву
+    // Допомагає Next.js знайти корінь проекту в GitHub Actions
     settings: {
       next: {
         rootDir: './',
       },
     },
   },
-  ...compat.extends(
-    'next/core-web-vitals',
-    'next/typescript',
-    'plugin:prettier/recommended'
-  ),
-  // Розширюємо стандартні конфіги Next + TypeScript + Prettier recommended
+  // Тільки один набір розширень
   ...compat.extends(
     'next/core-web-vitals',
     'next/typescript',
     'plugin:prettier/recommended'
   ),
 
-  // Правила проекту: робимо Prettier помилкою (щоб CI/IDE показувало)
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
     rules: {
@@ -38,7 +32,6 @@ const eslintConfig = [
     },
   },
 
-  // Ігнор-патерни
   {
     ignores: [
       'node_modules/**',
