@@ -1,0 +1,67 @@
+name: Next.js Quality Control & Deploy
+
+on:
+  push:
+    # Деплой спрацює тільки при пуші в main
+    # Контроль якості спрацює при пуші в dev (якщо ти пушиш туди напряму)
+    branches: [ "main", "dev" ]
+  pull_request:
+    # Перевірки для PR в обидві гілки
+    branches: [ "main", "dev" ]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ЕТАП 1: КОНТРОЛЬ ЯКОСТІ (Завжди для PR в main та dev)
+  quality-gate:
+    name: Check Code Quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Prettier Check
+        run: npx prettier --check .
+
+      - name: Lint Check
+        run: npm run lint
+
+      - name: TypeScript Check
+        run: npx tsc --noEmit
+
+      - name: Build Check
+#        run: npm run build
+
+  # ЕТАП 2: ДЕПЛОЙ (Тільки для main і тільки після успішних перевірок)
+  deploy:
+    needs: quality-gate
+    # УМОВА: Деплоїмо ТІЛЬКИ якщо код потрапив у main (пуш або мердж PR)
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Vercel CLI
+        run: npm install --global vercel
+
+      - name: Production Deploy
+        run: |
+          vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+          vercel build --prod --token=$VERCEL_TOKEN
+          vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN

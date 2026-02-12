@@ -1,0 +1,55 @@
+/*ui.css*/
+@layer components {
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-weight: 400;
+
+    @apply inline-block text-[0.88rem] text-white uppercase transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-brand-light hover:bg-brand-500 cursor-pointer text-white shadow;
+  }
+
+  .divider {
+    @apply bg-brand-500 mb-6 h-0.5 w-16;
+  }
+
+  .dot {
+    @apply bg-brand-500 block h-2 w-2;
+  }
+
+  .mobile-menu-overlay {
+    /* 1. Позиціювання та Розміри */
+    @apply fixed inset-0 z-[105] flex flex-col items-center justify-center md:hidden;
+
+    /* 2. Візуал */
+    @apply bg-black/95 text-white backdrop-blur-md;
+
+    /* 3. Стан за замовчуванням (Закрито) */
+    @apply pointer-events-none invisible -translate-y-8 opacity-0 transition-all duration-500 ease-in-out;
+  }
+
+  /* Стан "Відкрито" через один селектор */
+  .mobile-menu-overlay[data-menu-open='true'] {
+    @apply pointer-events-auto visible translate-y-0 opacity-100;
+  }
+
+  .mobile-menu-link {
+    @apply font-heading text-2xl tracking-[0.2em] uppercase transition-all duration-300;
+    /* Початковий стан для анімації появи */
+    @apply translate-y-4 opacity-0;
+  }
+
+  .mobile-menu-overlay[data-menu-open='true'] .mobile-menu-link {
+    @apply translate-y-0 opacity-100;
+  }
+
+  /* Hover тільки для пристроїв з мишкою */
+  @media (hover: hover) {
+    .mobile-menu-link:hover {
+      @apply text-brand-500 scale-110;
+    }
+  }
+}
