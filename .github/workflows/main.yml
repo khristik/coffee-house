@@ -41,7 +41,7 @@ jobs:
       - name: TypeScript Check
         run: npx tsc --noEmit
 
-      - name: Build Check
+#      - name: Build Check
 #        run: npm run build
 
   # ЕТАП 2: ДЕПЛОЙ (Тільки для main і тільки після успішних перевірок)
