@@ -10,6 +10,19 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  {
+    // Додай цей блок на початок масиву
+    settings: {
+      next: {
+        rootDir: './',
+      },
+    },
+  },
+  ...compat.extends(
+    'next/core-web-vitals',
+    'next/typescript',
+    'plugin:prettier/recommended'
+  ),
   // Розширюємо стандартні конфіги Next + TypeScript + Prettier recommended
   ...compat.extends(
     'next/core-web-vitals',
