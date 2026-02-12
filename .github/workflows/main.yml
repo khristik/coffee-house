@@ -4,10 +4,10 @@ on:
   push:
     # Деплой спрацює тільки при пуші в main
     # Контроль якості спрацює при пуші в dev (якщо ти пушиш туди напряму)
-    branches: [ "main", "dev" ]
+    branches: ['main', 'dev']
   pull_request:
     # Перевірки для PR в обидві гілки
-    branches: [ "main", "dev" ]
+    branches: ['main', 'dev']
 
 permissions:
   contents: read
