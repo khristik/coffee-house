@@ -10,27 +10,23 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  // 1. Налаштування кореневої директорії для Next.js
   {
-    // Додай цей блок на початок масиву
     settings: {
       next: {
         rootDir: './',
       },
     },
   },
-  ...compat.extends(
-    'next/core-web-vitals',
-    'next/typescript',
-    'plugin:prettier/recommended'
-  ),
-  // Розширюємо стандартні конфіги Next + TypeScript + Prettier recommended
+
+  // 2. Основні конфіги (тільки один раз!)
   ...compat.extends(
     'next/core-web-vitals',
     'next/typescript',
     'plugin:prettier/recommended'
   ),
 
-  // Правила проекту: робимо Prettier помилкою (щоб CI/IDE показувало)
+  // 3. Правила для файлів
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
     rules: {
@@ -38,7 +34,7 @@ const eslintConfig = [
     },
   },
 
-  // Ігнор-патерни
+  // 4. Ігнорування папок
   {
     ignores: [
       'node_modules/**',
