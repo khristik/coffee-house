@@ -14,7 +14,7 @@ export default function Footer() {
         alt="Coffee background"
         fill
         priority
-        className="-z-20 scale-105 object-cover"
+        className="scale-105 object-cover -z-20"
       />
 
       <div className="section-overlay" />
@@ -22,7 +22,7 @@ export default function Footer() {
       <div className="container-custom relative z-10">
         <div className="flex flex-col gap-16 lg:flex-row lg:gap-24">
           <div className="order-1 w-full lg:order-2 lg:w-1/2">
-            <div className="mb-8 text-center lg:text-left">
+            <div className="mb-8">
               <h3 className="font-pt-sans text-lg tracking-wider uppercase">
                 Send Message
               </h3>

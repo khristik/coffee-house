@@ -1,10 +1,10 @@
 /*theme.css*/
 @theme {
   /* --- TYPOGRAPHY --- */
-  --font-sans: var(--font-sans), ui-sans-serif, system-ui;
-  --font-serif: var(--font-serif), ui-serif, Georgia;
-  --font-heading: var(--font-heading), sans-serif;
-  --font-pt-sans: var(--font-pt-sans), sans-serif;
+  --font-sans: 'Inter', 'Helvetica Neue', ui-sans-serif, system-ui;
+  --font-serif: 'Georgia', ui-serif, Georgia;
+  --font-heading: 'Playfair Display', sans-serif;
+  --font-pt-sans: 'PT Sans', sans-serif;
 
   /* --- COLORS --- */
 

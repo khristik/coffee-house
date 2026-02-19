@@ -9,10 +9,10 @@ export default function Hero() {
         alt="Barista preparing coffee at Coffee House"
         fill
         priority
-        className="-z-20 object-cover"
+        className="object-cover -z-20"
       />
 
-      <div className="absolute inset-0 -z-10 bg-black/60" />
+      <div className="absolute inset-0 -z-10 bg-black/70" />
 
       <div className="container-custom relative z-10">
         <div className="max-w-2xl text-left">
@@ -20,13 +20,13 @@ export default function Hero() {
             Welcome to <br /> Our Coffee Shop
           </h1>
 
-          <p className="font-pt-sans text-md mb-8 text-lg text-white">
+          <p className="font-pt-sans mb-8 text-lg text-white">
             Freshly brewed coffee. Moments worth savoring, one cup at a time —
             your daily coffee ritual, elevated in your neighborhood coffee
             haven.
           </p>
 
-          <Link href="/#menu" className="btn btn-primary inline-block">
+          <Link href="/#menu" className="btn btn-primary">
             Explore Our Menu
           </Link>
         </div>

@@ -11,13 +11,10 @@ const OurOfferings = () => {
           {/* Контейнер для фото */}
           <div className="mx-auto flex w-full max-w-[340px] items-stretch gap-4 sm:max-w-none md:gap-6 lg:w-1/2">
             {BEANS_PHOTOS.map((photo, index) => (
-              /* Додаємо адаптивну висоту самому beans-photo-strip,
-                 щоб фон і тінь стискалися разом із картинкою */
               <div
                 key={index}
                 className="beans-photo-strip h-[220px] flex-1 sm:h-[400px] md:h-[520px]"
               >
-                {/* h-full змушує обгортку картинки займати рівно стільки місця, скільки дає батько */}
                 <div className="relative h-full w-full">
                   <Image
                     src={photo.src}
@@ -33,7 +30,7 @@ const OurOfferings = () => {
           </div>
 
           {/* Блок з текстом */}
-          <div className="w-full text-center lg:w-1/2 lg:text-left">
+          <div className="w-full lg:w-1/2">
             <h2 className="section-title mb-4">The Beans</h2>
             <p className="overline-text mb-6 text-gray-600">
               Quality cacao from around the globe

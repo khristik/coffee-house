@@ -10,8 +10,6 @@ export default function SeasonSpecials() {
       <div className="container-custom">
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-16">
           {/* RIGHT (Image Composition) */}
-          {/* hidden — приховує на мобілці та планшеті
-              lg:flex — показує тільки на великих екранах */}
           <div className="relative order-1 hidden h-[550px] w-full lg:order-2 lg:flex lg:basis-1/2">
             {/* Big Image */}
             <div className="img-box specials-big group shadow-lg">
@@ -40,8 +38,7 @@ export default function SeasonSpecials() {
           </div>
 
           {/* LEFT - Text Content */}
-          {/* w-full гарантує, що текст займе всю ширину, коли картинок немає */}
-          <div className="w-full text-center lg:basis-1/2 lg:text-left">
+          <div className="w-full lg:basis-1/2">
             <div>
               <p className="overline-text text-brand-500">
                 Limited-time offers

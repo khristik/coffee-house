@@ -22,11 +22,7 @@ export default function About() {
           {ABOUT_FEATURES.map((feature, i) => (
             <article
               key={i}
-              /* max-w-[320px] — щоб на мобільних текст не розтікався і блок міг відцентруватися.
-                mx-auto — центрує весь блок на мобільних.
-                md:mx-0 md:max-w-none — на десктопі прибираємо обмеження, щоб блок зайняв усю колонку.
-              */
-              className="mx-auto flex w-full max-w-[320px] items-start gap-4 md:mx-0 md:max-w-none"
+              className="feature-card-mobile flex w-full items-start gap-4"
             >
               {/* Іконка */}
               <div className="text-brand-500 pt-1">{feature.icon}</div>
