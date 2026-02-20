@@ -1,0 +1,31 @@
+/*theme.css*/
+@theme {
+  /* --- TYPOGRAPHY --- */
+  --font-sans: 'Inter', 'Helvetica Neue', ui-sans-serif, system-ui;
+  --font-serif: 'Georgia', ui-serif, Georgia;
+  --font-heading: 'Playfair Display', sans-serif;
+  --font-pt-sans: 'PT Sans', sans-serif;
+
+  /* --- COLORS --- */
+
+  /* Brand / Accents (Roasted Coffee & Gold) */
+  --color-brand-900: oklch(0.24 0.05 48);
+  --color-brand-500: oklch(0.42 0.11 50);
+  --color-brand-light: oklch(0.51 0.12 52);
+
+  /* Coffee Palette */
+  --color-coffee-warm: oklch(0.22 0.06 42);
+  --color-amber-900: oklch(0.414 0.112 45.9);
+
+  /* UI Specific (Headers, Links, Overlays) */
+  --color-header-link: oklch(0.85 0.02 50);
+
+  /* Neutrals: Gray (Backgrounds & Text) */
+  --color-gray-800: oklch(0.27 0.02 255);
+  --color-gray-600: oklch(0.45 0.02 255);
+  --color-gray-light: oklch(0.985 0.002 247.858);
+
+  /* Neutrals: Slate (Muted UI elements) */
+  --color-slate-800: oklch(0.279 0.041 260.031);
+  --color-slate-600: oklch(0.446 0.043 257.281);
+}

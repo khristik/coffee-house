@@ -1,0 +1,22 @@
+/*typography.css*/
+@layer components {
+  .hero-title {
+    font-weight: 600;
+    /* Типографіка → Колір → Відступи → Адаптивність */
+    @apply mb-5 text-3xl leading-tight text-white md:text-4xl lg:text-6xl;
+  }
+
+  .section-title {
+    /* Сімейство шрифту → Розмір → Колір → Адаптивність */
+    @apply font-serif text-4xl text-gray-700 md:text-5xl;
+  }
+
+  .section-desc {
+    @apply font-pt-sans text-base text-gray-700;
+  }
+
+  .overline-text {
+    /* Дисплей → Типографіка */
+    @apply block font-sans tracking-widest uppercase;
+  }
+}

@@ -1,0 +1,18 @@
+/*shared.css*/
+@layer components {
+  /* Menu & Specials */
+  .img-box {
+    /* Позиціонування → Розміри (Overflow) → Анімація */
+    @apply relative overflow-hidden transition-all duration-500;
+  }
+
+  .img-zoom {
+    /* Візуал (Обрізка) → Анімація → Стан (Hover) */
+    @apply object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-110;
+  }
+
+  .img-overlay {
+    /* Позиціонування (Z-index) → Дисплей/Розміри → Візуал (Фон/Тінь) → Стан/Анімація */
+    @apply absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-30 shadow-lg transition-opacity duration-500 group-hover:opacity-60;
+  }
+}

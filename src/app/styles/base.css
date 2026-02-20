@@ -1,0 +1,15 @@
+@layer base {
+  html {
+    /* Плавний скрол тільки якщо користувач не вимкнув анімації в системі */
+    @media (prefers-reduced-motion: no-preference) {
+    }
+    /* Запобігає "стрибкам" контенту при появі скролбару */
+    scrollbar-gutter: stable;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-heading uppercase;
+  }
+}
