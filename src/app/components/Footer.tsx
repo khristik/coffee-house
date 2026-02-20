@@ -14,7 +14,7 @@ export default function Footer() {
         alt="Coffee background"
         fill
         priority
-        className="scale-105 object-cover -z-20"
+        className="-z-20 scale-105 object-cover"
       />
 
       <div className="section-overlay" />

@@ -9,7 +9,7 @@ export default function Hero() {
         alt="Barista preparing coffee at Coffee House"
         fill
         priority
-        className="object-cover -z-20"
+        className="-z-20 object-cover"
       />
 
       <div className="absolute inset-0 -z-10 bg-black/70" />
